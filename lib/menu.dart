@@ -9,7 +9,7 @@ class Menu extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Menu'), //texto título do projeto
         centerTitle: true, //para por o texto no centro da tela
-        backgroundColor: Colors.deepOrange, //adicionar a cor do appBar
+        backgroundColor: Colors.deepPurple, //adicionar a cor do appBar
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.fromLTRB(10, 0, 10, 10), //para arrumar a configuração da tela, e também conseguir deslizar na tela
@@ -19,7 +19,7 @@ class Menu extends StatelessWidget {
             const Icon( //parte do ícone da tela
             Icons.store, //determina qual o ícone escolhido
             size: 120.0,// determina o tamanho do ícone
-            color: Colors.deepOrange,// determina a cor do ícone
+            color: Colors.deepPurple,// determina a cor do ícone
             ),
           Column(// colocar um colunas os botões
             crossAxisAlignment: CrossAxisAlignment.stretch,

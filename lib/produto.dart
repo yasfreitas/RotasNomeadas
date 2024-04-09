@@ -10,9 +10,9 @@ class Produto extends StatefulWidget {
 }
 
 class _ProdutoState extends State<Produto> {
-  TextEditingController nomeController = TextEditingController();
-  TextEditingController descricaoController = TextEditingController();
-  TextEditingController precoController = TextEditingController();
+  TextEditingController nomeController = TextEditingController();//controller para "armazenar" os dados inseridos
+  TextEditingController descricaoController = TextEditingController();//controller para "armazenar" os dados inseridos
+  TextEditingController precoController = TextEditingController();//controller para "armazenar" os dados inseridos
   String _textoInfo = "Casdastre seu produto!";
 
   void _limpar_Tela(){
@@ -35,32 +35,33 @@ class _ProdutoState extends State<Produto> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Cadastro de Produto"),
-        centerTitle: true,
-        backgroundColor: Colors.lightGreenAccent,
+        title: Text("Cadastro de Produto"),//título
+        centerTitle: true,//título no centro
+        backgroundColor: Colors.lightGreenAccent,//muda a cor do appBar
         actions: <Widget>[
-          IconButton(onPressed: _limpar_Tela,
-              icon: Icon(Icons.refresh)),
+          IconButton(onPressed: _limpar_Tela,//adiciona um botão, e quando clicar vai limpar a tela
+              icon: Icon(Icons.refresh)//ícone dentro do appBar
+          ),
         ],
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
+        padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),//para arrumar a configuração da tela, e também conseguir deslizar na tela
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             const Icon(
-              Icons.electric_bolt,
-              size: 120.0,
-              color: Colors.lightGreenAccent,
+              Icons.electric_bolt,// ícone dentro do body
+              size: 120.0,//tamanho do ícone
+              color: Colors.lightGreenAccent//cor do ícone
             ),
             TextField(
-              keyboardType: TextInputType.text,
+              keyboardType: TextInputType.text,//coloca um texto para um campo
               decoration: InputDecoration(
-                  labelText: "Nome",
-                  labelStyle: TextStyle(color: Colors.grey)),
-              textAlign: TextAlign.center,
+                  labelText: "Nome",//nome do texto
+                  labelStyle: TextStyle(color: Colors.grey)),//cor do texto
+              textAlign: TextAlign.center,//alinha o texto no centro
               style: TextStyle(fontSize: 25.0),
-              controller: nomeController,
+              controller: nomeController,//onde vai guardar a informação
             ),
             TextField(
               keyboardType: TextInputType.text,
@@ -83,14 +84,14 @@ class _ProdutoState extends State<Produto> {
             Padding(
               padding: const EdgeInsets.only(top: 10, bottom: 10),
               child: SizedBox(
-                height: 50.0,
-                child: ElevatedButton(
+                height: 50.0,//tamanho do padding
+                child: ElevatedButton(//botão acrescentado
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.lightGreenAccent,
-                      textStyle: TextStyle(fontSize: 25.0),
+                      backgroundColor: Colors.lightGreenAccent,//cor do botão
+                      textStyle: TextStyle(fontSize: 25.0),//tamanho do texto
                     ),
-                    onPressed: _cadastrar_produto,
-                    child: const Text("Cadastrar")
+                    onPressed: _cadastrar_produto,//quando clicado vai acionar o método (_cadastrar_produto)
+                    child: const Text("Cadastrar")//texto dentro do botão
                 ),
               ),
             ),
